@@ -4,7 +4,7 @@ import axios from "axios";
 import  router  from './routes/index.js';
 import morgan from 'morgan';
 
-import morgan from 'morgan';
+
 
 const app= express();
 app.use(morgan('tiny'));
