@@ -4,7 +4,8 @@ import cheerio from 'cheerio';
 export async function searchGoogleAcademic(request, response) {
     try {
       const query = request.query.q;
-      const googleScholarUrl = `https://scholar.google.com/scholar?q=${query}`;
+      const language='es';
+      const googleScholarUrl = `https://scholar.google.com/scholar?hl=${language}&q=${encodeURIComponent(query)}`;
   
       // Realiza una solicitud HTTP a Google Académico
       const responses = await axios.get(googleScholarUrl);
