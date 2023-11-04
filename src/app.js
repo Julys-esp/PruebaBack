@@ -12,6 +12,7 @@ app.use(morgan('tiny'));
 
 //Route get query 
 app.use('/search',router);
+app.use('/videos',router);
 app.use(cors());
 
 
