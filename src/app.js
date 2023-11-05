@@ -1,13 +1,27 @@
 import express, { request, response }  from 'express';
 import { port } from "./config/index.js";
 import  router  from './routes/index.js';
+import mongoose from "mongoose"; 
+import  { mongo_uri } from './config/index.js';
 import morgan from 'morgan';
 import cors from 'cors';
 
 
+//Conexion Mongoose
+mongoose.connect(mongo_uri);
+const database=mongoose.connection;
+
+database.on('error',(error=>{
+  console.log(error);
+}))
+
+database.once('connected',()=>{
+  console.log('Database Connected');
+})
 
 const app= express();
 app.use(morgan('tiny'));
+
 
 //Route get query 
 app.use('/search',router);
