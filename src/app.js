@@ -1,6 +1,5 @@
 import express, { request, response }  from 'express';
 import { port } from "./config/index.js";
-
 import  router  from './routes/index.js';
 import morgan from 'morgan';
 import cors from 'cors';

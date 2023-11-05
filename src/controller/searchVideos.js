@@ -1,7 +1,6 @@
 
 import axios from 'axios';
-//API Key Youtube 
-const apiKey = 'AIzaSyDz8ONQmmw7I8WDArjsgZoc3ofvmtg27hk';
+import  {apiKey}  from "../config/index.js";
 
 // Youtube ID channels
 const channelIds = ['UCGQO3uUEXBLwDjNSlWFVMVQ', 'UCnmlG_YzRYzWzJbW2oDn_ow'];
