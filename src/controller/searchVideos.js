@@ -25,7 +25,7 @@ export async function searchVideos(request, response) {
       const videos = resp.data.items.map((item) => {
         return {
           title: item.snippet.title,
-          thumbnail: item.snippet.thumbnails.default.url,
+          thumbnail: item.snippet.thumbnails.high.url,
           videoId: item.id.videoId,
           videoLink: `https://www.youtube.com/watch?v=${item.id.videoId}`,
         };

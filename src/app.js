@@ -27,6 +27,7 @@ app.use(morgan('tiny'));
 app.use('/search',router);
 app.use('/videos',router);
 app.use(cors());
+app.use(cors({ origin: 'http://127.0.0.1:5501', credentials: true, }));
 
 
 //config server

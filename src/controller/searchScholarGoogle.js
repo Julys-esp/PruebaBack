@@ -21,11 +21,15 @@ export async function searchGoogleAcademic(request, response) {
         const link = $(element).find('.gs_or a').attr('href');
         const snippet = $(element).find('.gs_rs').text();
 
+        
+        // Verifica si tanto el título como el snippet no están vacíos antes de agregarlos
+      if (title && snippet) {
         results.push({
           title,
           link,
           snippet,
         });
+      }
       });
 
     // Devuelve los resultados de búsqueda como respuesta JSON
