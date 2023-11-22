@@ -17,8 +17,9 @@ const addLinkToFolder = async (request, response) => {
         // Agregar los links a la carpeta y guardarla en la base de datos
         folder.links.push(link);
         await folder.save();
+        
   
-      response.status(200).json({ message: 'Link agregado correctamente a la carpeta' });
+      response.status(200).json({ message: 'Link agregado correctamente a la carpeta', data:folder });
     } catch (error) {
       console.error(error);
       response.status(500).json({ error: 'Error al agregar el link a la carpeta' });

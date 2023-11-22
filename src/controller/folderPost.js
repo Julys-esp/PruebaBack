@@ -14,8 +14,12 @@ const createFol=async(request,response,next)=>{
       // Crear la nueva carpeta y guardarla en la base de datos
       const newFolder = new Folder({ email, folderName });
       await newFolder.save();
+      response.status(201).json({
+        message:'Carpeta creada correctamente',
+        data:newFolder
+      });
   
-      response.status(201).json({ message: 'Carpeta creada correctamente' });
+      //response.status(201).json({ message: 'Carpeta creada correctamente' });
     } catch (error) {
       console.error(error);
       response.status(500).json({ error: 'Error al crear la carpeta' });
