@@ -6,6 +6,8 @@ import bodyParser from 'body-parser';
 import  { mongo_uri } from './config/index.js';
 import morgan from 'morgan';
 import cors from 'cors';
+import swaggerUi from 'swagger-ui-express';
+import { openApiSpecification } from './config/swagger.js';
 
 
 //Conexion Mongoose
@@ -31,9 +33,13 @@ app.use('/search',router);
 app.use('/videos',router);
 app.use('/create',router);
 app.use('/add',router);
+app.use('/folder',router);
 app.use(cors());
 app.use(cors({ origin: 'http://127.0.0.1:5501', credentials: true, }));
 
+//Ruta documentacion
+app.use('/docs',swaggerUi.serve);
+app.get('/docs', swaggerUi.setup(openApiSpecification));
 
 //config server
 app.listen(port, (error)=> {
