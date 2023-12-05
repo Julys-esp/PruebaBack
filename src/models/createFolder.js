@@ -7,6 +7,8 @@ const folderSchema=new Schema({
     folderName: {type: String, required:true},
     creationDate:{type: Date, default: Date.now},
     links: { type: [String], default: [] },
+    image:{type: String, required:true},
+    objective:{type: String, required:true}
   }); 
 
   const Folder = mongoose.model('folder', folderSchema);

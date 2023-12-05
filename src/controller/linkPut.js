@@ -15,7 +15,7 @@ const addLinkToFolder = async (request, response) => {
         }
     
         // Agregar los links a la carpeta y guardarla en la base de datos
-        folder.links.push(link);
+        folder.links.push( link.toString());
         await folder.save();
         
   
